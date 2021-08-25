@@ -1,0 +1,61 @@
+body {
+  /* Font Famaly */
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+  font-family: "Open Sans", sans-serif;
+  /* ---------- */
+  padding: 0;
+  margin: 0;
+  background: #0099ff;
+  color: #303030;
+}
+
+.App-Header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background-color: #fefefe;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+
+    .App-Header-Avatar {
+      width: 50px;
+      height: 50px;
+
+      border-radius: 50%;
+    }
+
+    .App-Header-ExportJson {
+      background-color: #fefefe;
+      border: 2px solid #eaeaea;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      height: 40px;
+      margin-left: 40px;
+      border-radius: 10px;
+      transition: 0.3s background;
+      cursor: pointer;
+    }
+
+    .App-Header-ExportJson:hover {
+      background-color: #eeeeee;
+    }
+  }
+}
+
+.main-section {
+  display: flex;
+  background: #09f;
+  padding: 0 25px;
+  margin-top: 25px;
+}
+
+.list-section {
+  background: #fefefe;
+  border-radius: 5px;
+  width: 250px;
+  margin-left: 25px;
+}

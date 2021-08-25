@@ -1,0 +1,66 @@
+.TextEditable {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-top: 5;
+  display: flex;
+  width: 100%;
+  max-width: 242px;
+  padding: 5px;
+}
+
+.TextEditable:focus ~ .TextEditable-underbar {
+  .TextEditable-underbar-expande {
+    width: 100%;
+  }
+}
+
+.TextEditable-underbar {
+  display: flex;
+  width: 100%;
+  height: 2px;
+  background-color: #eaeaea;
+}
+
+.TextEditable-underbar-expande {
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #09f;
+  transition: 0.3s;
+}
+
+.Card-Plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400px;
+  color: #303030;
+
+  height: 40px;
+  width: 250px;
+  margin-left: 25px;
+
+  cursor: pointer;
+
+  background: rgba(250, 250, 250, 0.3);
+  border: rgba(30, 30, 30, 0.3) solid 2px;
+  border-radius: 10px;
+
+  transition: 0.3s;
+
+  .icon {
+    margin-left: 6px;
+    font-size: 16px;
+  }
+}
+
+.Card-Plus:hover {
+  background-color: rgba(250, 250, 250, 0.5);
+}
