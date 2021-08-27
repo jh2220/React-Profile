@@ -59,3 +59,16 @@ body {
   width: 250px;
   margin-left: 25px;
 }
+
+.Transition-Opacity {
+  animation: Transition-Opacity 1s;
+}
+
+@keyframes Transition-Opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -8,8 +8,6 @@ interface IList {
 const List: React.FC<IList> = (props) => {
   const { listContent } = props;
 
-  console.log(listContent);
-
   return (
     <>
       {listContent.map((listContentItem: any) => {
