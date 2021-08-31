@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import AvatarIMG from "../img/avatar.png";
 
 interface IAppHeader {
-  setModalIsOpen: any;
+  setModalIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const AppHeader: React.FC<IAppHeader> = (props) => {

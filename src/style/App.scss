@@ -53,22 +53,59 @@ body {
   margin-top: 25px;
 }
 
+.export-json-textarea {
+  width: 100%;
+  height: 250px;
+  background: #eaeaea;
+  border: none;
+  outline: none;
+}
+
 .list-section {
   background: #fefefe;
   border-radius: 5px;
   width: 250px;
   margin-left: 25px;
-}
 
-.Transition-Opacity {
-  animation: Transition-Opacity 1s;
-}
+  ul {
+    list-style: none;
+    padding: 0;
 
-@keyframes Transition-Opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+    .List-Section-Item {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      margin-top: 2px;
+
+      .List-Section-Text {
+        display: flex;
+        width: 100%;
+
+        span {
+          display: block;
+          width: 10px;
+          height: 30px;
+        }
+
+        .List-Section-Item-Text {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          margin-left: 10px;
+          font-size: 16px;
+          width: 100%;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+
+      input {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
   }
 }

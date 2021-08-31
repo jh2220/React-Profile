@@ -13,6 +13,8 @@
 
   background: rgba($color: #000000, $alpha: 0.3);
 
+  transition: opacity 1s;
+
   .Modal-Children {
     background: #fefefe;
 
@@ -23,5 +25,16 @@
     width: 80%;
     max-width: 600px;
     min-height: 300px;
+
+    .Modal-Close-line {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 22px;
+      width: 100%;
+
+      .icon {
+        cursor: pointer;
+      }
+    }
   }
 }
