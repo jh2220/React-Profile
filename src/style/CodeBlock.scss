@@ -53,9 +53,29 @@
     background: transparent;
     outline: none;
     border: none;
-    color: #999;
+    color: #fefefe;
     padding-left: 10px;
     flex-grow: 1;
     resize: none;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #4d4d4d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aeaeae;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
 }

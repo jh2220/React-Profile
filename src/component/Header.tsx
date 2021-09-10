@@ -1,5 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import AvatarIMG from "../img/avatar.png";
+import AppBox from "./AppBox";
+import AppButton from "./AppButton";
 
 interface IAppHeader {
   setModalIsOpen: Dispatch<SetStateAction<boolean>>;
@@ -12,14 +14,15 @@ const AppHeader: React.FC<IAppHeader> = (props) => {
     <header className="App-Header">
       <div>
         <img className="App-Header-Avatar" src={AvatarIMG} alt="" />
-        <button
-          className="App-Header-ExportJson"
-          onClick={() => {
-            setModalIsOpen(true);
-          }}
-        >
-          Export Json
-        </button>
+        <AppBox margin={"0 0 0 25px"}>
+          <AppButton
+            onClick={() => {
+              setModalIsOpen(true);
+            }}
+          >
+            Export Json
+          </AppButton>
+        </AppBox>
       </div>
     </header>
   );

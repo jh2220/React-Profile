@@ -1,26 +1,31 @@
-import React, { Dispatch, SetStateAction } from "react";
-import ICardList from "../interface/ListContent";
+import React from "react";
 import "../style/Inputs.scss";
 
 interface ITextEditable {
   TextValue: string;
   onChange(eventResult: string): any;
+  onBlur(eventResult: string): any;
   underlines?: boolean;
+  fontSize?: string;
 }
 
 const TextEditable: React.FC<ITextEditable> = (props) => {
-  const { TextValue, onChange, underlines } = props;
+  const { TextValue, onChange, onBlur, underlines, fontSize } = props;
 
   return (
     <>
       <input
+        style={fontSize ? { fontSize: fontSize } : { fontSize: "24px" }}
         className="TextEditable"
         type="text"
         value={TextValue}
         onChange={(e) => {
           onChange(e.target.value);
         }}
-      ></input>
+        onBlur={(e) => {
+          onBlur(e.target.value);
+        }}
+      />
       {underlines === false ? (
         <></>
       ) : (

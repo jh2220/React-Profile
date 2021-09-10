@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import ICardList from "../interface/ListContent";
 import TextEditable from "./TextEditable";
 
@@ -34,6 +34,23 @@ const List: React.FC<IList> = (props) => {
     setListContent(newList);
   };
 
+  const removeItemName = (value: string, index: number, itemIndex: number) => {
+    if (value === "") {
+      const newList = [...listContent];
+      const newObject = [];
+
+      for (let i = 0; i < listContent[index].listItens.length; i++) {
+        if (listContent[index].listItens[i].name !== "") {
+          newObject.push(listContent[index].listItens[i]);
+        }
+      }
+
+      newList[index].listItens = newObject;
+
+      setListContent(newList);
+    }
+  };
+
   return (
     <>
       {listContent.map((listContentItem: any, Listindex: number) => {
@@ -42,6 +59,7 @@ const List: React.FC<IList> = (props) => {
             <div className="list-section">
               <TextEditable
                 TextValue={listContent[Listindex].title}
+                onBlur={() => {}}
                 onChange={(value) => {
                   updateTitleTable(value, Listindex);
                 }}
@@ -65,7 +83,11 @@ const List: React.FC<IList> = (props) => {
                             onChange={(value) => {
                               updateItemName(value, Listindex, itemIndex);
                             }}
+                            onBlur={(value) => {
+                              removeItemName(value, Listindex, itemIndex);
+                            }}
                             underlines={false}
+                            fontSize={"18px"}
                           />
                         </div>
                       </div>

@@ -64,3 +64,18 @@
 .Card-Plus:hover {
   background-color: rgba(250, 250, 250, 0.5);
 }
+
+.AppButton {
+  background-color: #fefefe;
+  border: 2px solid #eaeaea;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  height: 40px;
+  border-radius: 10px;
+  transition: 0.3s background;
+  cursor: pointer;
+}
+
+.AppButton:hover {
+  background-color: #eeeeee;
+}

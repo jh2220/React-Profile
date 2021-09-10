@@ -1,6 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { setConstantValue } from "typescript";
 import "../style/Modal.scss";
 
 interface IAppModal {

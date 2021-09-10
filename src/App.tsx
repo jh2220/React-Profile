@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AddCard from "./component/AddCard";
 import AppHeader from "./component/Header";
 import List from "./component/List";
@@ -7,11 +7,28 @@ import "./style/App.scss";
 import "./style/FX.scss";
 import CodeBlock from "./component/CodeBlock";
 import ICardList from "./interface/ListContent";
+import AppButton from "./component/AppButton";
+import AppBox from "./component/AppBox";
 
 function App() {
   const [listContent, setListContent] = useState<ICardList[]>();
   const [modalExportIsOpen, setModalExportIsOpen] = useState<boolean>(false);
   const [JsonExport, setJsonExport] = useState("");
+
+  const [copyButtonText, setCopyButtonText] = useState("Copiar");
+
+  const copyJsonExport = () => {
+    navigator.clipboard.writeText(JsonExport);
+    setCopyButtonText("Copiado !");
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (copyButtonText === "Copiado !") {
+        setCopyButtonText("Copiar");
+      }
+    }, 1000);
+  }, [copyButtonText]);
 
   useEffect(() => {
     if (listContent) {
@@ -46,16 +63,16 @@ function App() {
       </section>
       <Modal setCloseModal={setModalExportIsOpen} modalIsOpen={modalExportIsOpen}>
         <CodeBlock textContent={JsonExport} id={"JsonCode"} />
-        <input
-          type="button"
-          value="Copiar"
-          onClick={() => {
-            navigator.clipboard.writeText(JsonExport);
 
-            //.setSelectionRange(0, 99999);
-            //document.execCommand("copy");
-          }}
-        />
+        <AppBox display={"flex"} justifyContent={"center"} margin={"25px 0 0 0"}>
+          <AppButton
+            onClick={() => {
+              copyJsonExport();
+            }}
+          >
+            {copyButtonText}
+          </AppButton>
+        </AppBox>
       </Modal>
     </>
   );
