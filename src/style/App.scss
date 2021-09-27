@@ -16,6 +16,9 @@ body {
   width: 100%;
   background-color: #fefefe;
 
+  position: fixed;
+  top: 0;
+
   div {
     display: flex;
     align-items: center;
@@ -51,6 +54,7 @@ body {
   background: #09f;
   padding: 0 25px;
   margin-top: 25px;
+  margin-top: 70px;
 }
 
 .export-json-textarea {
@@ -65,6 +69,8 @@ body {
   background: #fefefe;
   border-radius: 5px;
   width: 250px;
+  min-width: 250px;
+  max-width: 250px;
   margin-left: 25px;
 
   ul {

@@ -59,7 +59,7 @@ function App() {
       <AppHeader setModalIsOpen={setModalExportIsOpen} />
       <section className="main-section">
         {listContent ? <List listContent={listContent} setListContent={setListContent} /> : <></>}
-        <AddCard />
+        <AddCard listContent={listContent} setListContent={setListContent} />
       </section>
       <Modal setCloseModal={setModalExportIsOpen} modalIsOpen={modalExportIsOpen}>
         <CodeBlock textContent={JsonExport} id={"JsonCode"} />

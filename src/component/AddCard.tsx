@@ -1,9 +1,27 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { FaPlus } from "react-icons/fa";
+import ICardList from "../interface/ListContent";
 
-const AddCard = () => {
+interface IAddCard {
+  listContent: any; //ICardList[];
+  setListContent: Dispatch<SetStateAction<ICardList[] | undefined>>;
+}
+
+const AddCard: React.FC<IAddCard> = (props) => {
+  const { listContent, setListContent } = props;
+
+  const onAddCardList = () => {
+    setListContent([
+      ...listContent,
+      {
+        title: "New Card",
+        listItens: [{ name: "List Item", isChecked: false, tagColor: "#09f" }],
+      },
+    ]);
+  };
+
   return (
-    <div className="Card-Plus">
+    <div className="Card-Plus" onClick={onAddCardList}>
       Adicionar Card <FaPlus className="icon" />
     </div>
   );

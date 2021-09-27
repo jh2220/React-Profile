@@ -60,22 +60,22 @@
   }
 }
 
-::-webkit-scrollbar {
+.codeblock-body::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+.codeblock-body::-webkit-scrollbar-track {
   background-color: #4d4d4d;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+.codeblock-body::-webkit-scrollbar-thumb {
   background: #aeaeae;
   border-radius: 10px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+.codeblock-body::-webkit-scrollbar-thumb:hover {
   background: #999999;
 }
