@@ -9,6 +9,7 @@ import CodeBlock from "./component/CodeBlock";
 import ICardList from "./interface/ListContent";
 import AppButton from "./component/AppButton";
 import AppBox from "./component/AppBox";
+import sampleImport from "./service/sampleImport";
 
 function App() {
   const [listContent, setListContent] = useState<ICardList[]>();
@@ -16,6 +17,8 @@ function App() {
   const [JsonExport, setJsonExport] = useState("");
 
   const [copyButtonText, setCopyButtonText] = useState("Copiar");
+
+  const sampleImprtService = new sampleImport();
 
   const copyJsonExport = () => {
     navigator.clipboard.writeText(JsonExport);
@@ -39,19 +42,11 @@ function App() {
   }, [listContent]);
 
   useEffect(() => {
-    setListContent([
-      {
-        title: "Simple Title",
-        listItens: [
-          { name: "Alpha", isChecked: false, tagColor: "#09f" },
-          { name: "Beta", isChecked: true, tagColor: "#f54275" },
-        ],
-      },
-      {
-        title: "List 2",
-        listItens: [{ name: "Charlie", isChecked: false, tagColor: "#eff542" }],
-      },
-    ]);
+    sampleImprtService.getExempleCards().then((value: any) => {
+
+      setListContent(JSON.parse(value));
+      
+    });
   }, []);
 
   return (
