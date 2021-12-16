@@ -2,7 +2,6 @@ const express = require("express")
 const app = express()
 const swaggerJSDoc = require("swagger-jsdoc")
 const swaggerUi = require("swagger-ui-express")
-const cors = require('cors')
 
 const port = 3001
 
@@ -23,6 +22,10 @@ var swaggerOptions = {
 const swaggerDocs = swaggerJSDoc(swaggerOptions)
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
+//Routers
+const exempleCardsRoute = require('./routes/exempleCards.route')
+const testConectionRoute = require('./routes/testConection.route')
+
 /**
  * @swagger
  * /exempleCards:
@@ -34,24 +37,7 @@ app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *      '200':
  *        description: A successful response
  */
-app.get('/exempleCards', cors(), (req, res) => {
-
-  var response = [
-    {
-      title: "Simple Title",
-      listItens: [
-        { name: "Alpha", isChecked: false, tagColor: "#09f" },
-        { name: "Beta", isChecked: true, tagColor: "#f54275" },
-      ],
-    },
-    {
-      title: "List 2",
-      listItens: [{ name: "Charlie", isChecked: false, tagColor: "#eff542" }],
-    },
-  ];
-
-  res.send(response);
-})
+app.use(exempleCardsRoute)
 
 /**
  * @swagger
@@ -64,9 +50,7 @@ app.get('/exempleCards', cors(), (req, res) => {
  *      '200':
  *        description: A successful response
  */
-app.get('/testConection', cors(), (req, res) => {
-  res.send("Sample test");
-})
+app.use(testConectionRoute)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
