@@ -55,6 +55,7 @@ body {
   padding: 0 25px;
   margin-top: 25px;
   margin-top: 70px;
+  align-items: flex-start;
 }
 
 .export-json-textarea {
@@ -75,23 +76,33 @@ body {
 
   ul {
     list-style: none;
-    padding: 0;
+    padding: 0 5px;
 
     .List-Section-Item {
       display: flex;
-      justify-content: space-between;
-      height: 30px;
+      flex-direction: column;
+      min-height: 30px;
       margin-top: 2px;
+      border-radius: 5px;
+      margin-bottom: 10px;
 
-      .List-Section-Text {
+      background-color: #fefefe;
+      -webkit-box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.21); 
+      box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.21);
+
+      span {
+        display: block;
+        width: 100%;
+        height: 5px;
+        border-radius: 5px 5px 0 0 ;
+      }
+
+      .List-Section-Container{
+        display: flex;
+
+        .List-Section-Text {
         display: flex;
         width: 100%;
-
-        span {
-          display: block;
-          width: 10px;
-          height: 30px;
-        }
 
         .List-Section-Item-Text {
           display: flex;
@@ -112,6 +123,9 @@ body {
         height: 20px;
         margin-right: 10px;
       }
+
+      }
+
     }
   }
 }

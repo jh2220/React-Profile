@@ -11,13 +11,28 @@ const AddCard: React.FC<IAddCard> = (props) => {
   const { listContent, setListContent } = props;
 
   const onAddCardList = () => {
-    setListContent([
-      ...listContent,
-      {
-        title: "New Card",
-        listItens: [{ name: "List Item", isChecked: false, tagColor: "#09f" }],
-      },
-    ]);
+
+    if(listContent != undefined){
+
+      setListContent([
+        ...listContent,
+        {
+          title: "New Card",
+          listItens: [{ name: "List Item", isChecked: false, tagColor: "#09f" }],
+        },
+      ]);
+
+    }else{
+
+      setListContent([
+        {
+          title: "New Card",
+          listItens: [{ name: "List Item", isChecked: false, tagColor: "#09f" }],
+        },
+      ]);
+
+    }
+
   };
 
   return (

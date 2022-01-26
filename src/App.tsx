@@ -9,7 +9,7 @@ import CodeBlock from "./component/CodeBlock";
 import ICardList from "./interface/ListContent";
 import AppButton from "./component/AppButton";
 import AppBox from "./component/AppBox";
-import sampleImport from "./service/sampleImport";
+import cardsService from "./service/cardsService";
 
 function App() {
   const [listContent, setListContent] = useState<ICardList[]>();
@@ -18,7 +18,7 @@ function App() {
 
   const [copyButtonText, setCopyButtonText] = useState("Copiar");
 
-  const sampleImprtService = new sampleImport();
+  const serviceCards = new cardsService();
 
   const copyJsonExport = () => {
     navigator.clipboard.writeText(JsonExport);
@@ -42,10 +42,8 @@ function App() {
   }, [listContent]);
 
   useEffect(() => {
-    sampleImprtService.getExempleCards().then((value: any) => {
-
+    serviceCards.cardUpdateGet().then((value: any) => {
       setListContent(JSON.parse(value));
-      
     });
   }, []);
 

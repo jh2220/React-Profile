@@ -7,10 +7,11 @@ interface ITextEditable {
   onBlur(eventResult: string): any;
   underlines?: boolean;
   fontSize?: string;
+  placeHolder?: string;
 }
 
 const TextEditable: React.FC<ITextEditable> = (props) => {
-  const { TextValue, onChange, onBlur, underlines, fontSize } = props;
+  const { TextValue, onChange, onBlur, underlines, fontSize, placeHolder } = props;
 
   return (
     <>
@@ -25,6 +26,7 @@ const TextEditable: React.FC<ITextEditable> = (props) => {
         onBlur={(e) => {
           onBlur(e.target.value);
         }}
+        placeholder={placeHolder ? placeHolder : ""}
       />
       {underlines === false ? (
         <></>

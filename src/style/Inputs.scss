@@ -81,3 +81,39 @@
 .AppButton:hover {
   background-color: #eeeeee;
 }
+
+.item-plus {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 10px;
+
+  input {
+    height: 20px;
+    font-size: 16px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .item-plus-color {
+    display: block;
+    width: 18px !important;
+    height: 18px !important;
+    border: none;
+    border-radius: 60px;
+  }
+
+  .item-plus-pallet {
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 126px;
+  }
+
+  #rc-editable-input-2 {
+    margin-left: -0px;
+  }
+
+  .icon {
+    cursor: pointer;
+  }
+}
